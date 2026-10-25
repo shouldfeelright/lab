@@ -9,7 +9,16 @@
   "buildEntryPoint": "index.html",
   "localAppUrl": "http://localhost:5173",
   "logoPath": "Default",
-  "connectionReferences": {},
+  "connectionReferences": {
+    "9d73cc64-f8c3-40c9-acc9-9fdcdec49441": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_lab-5fopen-20food-20facts-5f92b4b161fc897760",
+      "displayName": "Open Food Facts",
+      "dataSources": [
+        "lab_5fopen_20food_20facts_5f92b4b161fc897760"
+      ],
+      "dataSets": {}
+    }
+  },
   "databaseReferences": {
     "default.cds": {
       "dataSources": {
@@ -24,6 +33,10 @@
         "warehouselocations": {
           "entitySetName": "lab_warehouselocations",
           "logicalName": "lab_warehouselocation"
+        },
+        "products": {
+          "entitySetName": "lab_products",
+          "logicalName": "lab_product"
         }
       },
       "environmentVariableName": ""
