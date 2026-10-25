@@ -6,5 +6,13 @@
   "publisherPrefix": "lab",
   "repo": "shouldfeelright/lab",
   "mainRulesetId": 25828923,
-  "mainRulesetName": "lab-main-protection"
+  "mainRulesetName": "lab-main-protection",
+  "devEnvUrl": "https://wm-dev-7839.crm.dynamics.com",
+  "devEnvId": "131b3182-157c-e197-8513-ad533916a20e",
+  "devOrgId": "b961fda4-98d0-f111-a04e-6045bd003102",
+  "devProfile": "dev",
+  "testEnvUrl": "https://wm-test-7839.crm.dynamics.com",
+  "testEnvId": "13435449-d0ba-e3e9-83f0-0a3c556cc41b",
+  "testOrgId": "70703ee4-99d0-f111-be87-6045bd06d91b",
+  "testProfile": "test"
 }
