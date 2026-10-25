@@ -1,0 +1,107 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Open Food Facts",
+    "description": "Look up product data by barcode from the Open Food Facts public database.",
+    "version": "1.0"
+  },
+  "host": "world.openfoodfacts.org",
+  "basePath": "/api/v2",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/product/{barcode}.json": {
+      "get": {
+        "operationId": "GetProductByBarcode",
+        "summary": "Get product by barcode",
+        "description": "Returns the product name, brand, quantity and image URL for a barcode.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "barcode",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-summary": "Barcode",
+            "description": "The product barcode (EAN)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The product.",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        }
+      }
+    },
+    "/product-image": {
+      "get": {
+        "operationId": "GetProductImage",
+        "summary": "Get product image",
+        "description": "Returns the bytes of a product image.",
+        "produces": [
+          "image/jpeg",
+          "image/png"
+        ],
+        "parameters": [
+          {
+            "name": "imageUrl",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "x-ms-summary": "Image URL",
+            "description": "The URL of the image to fetch."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The image.",
+            "schema": {
+              "type": "file"
+            },
+            "x-ms-media-kind": "image"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "ean": {
+          "type": "string",
+          "description": "Barcode"
+        },
+        "name": {
+          "type": "string",
+          "description": "Product name"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Brand"
+        },
+        "quantity": {
+          "type": "string",
+          "description": "Quantity, as free text"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Front image URL"
+        }
+      }
+    }
+  },
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
